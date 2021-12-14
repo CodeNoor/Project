@@ -1,0 +1,58 @@
+let a = document.getElementsByClassName('yt-simple-endpoint style-scope ytd-topbar-logo-renderer')
+console.log(a)
+
+let a = document.getElementById('')
+console.log(a)
+
+let a = document.getElementsByClassName('yt-simple-endpoint style-scope ytd-topbar-logo-renderer')[0]
+console.log(a)
+a.href ='none'
+
+linkObject.href = URL
+
+console.log(a.href.length)
+
+let a = document.getElementsByClassName('yt-simple-endpoint style-scope ytd-topbar-logo-renderer')[0]
+console.log(a)
+console.log(a.href)
+console.log(a.href.length)
+console.log(a.href.substring(6,23))
+console.log(a.href.endsWith('youtube.com/'))
+
+
+
+let str = "//www.youtube.com";
+let links = document.links;
+console.log(links);
+let href;
+Array.from(links).forEach(function(element) {
+  href = element.href;
+  if (href.substring(6,23)) {
+    console.log(href);
+  }
+});
+
+let str = "//www.youtube.com";
+let links = document.links;
+// console.log(links);
+let href;
+Array.from(links).forEach(function(element) {
+  href = element.href;
+  if (href.endsWith('youtube.com/')) {
+    console.log(href);
+  }
+});
+
+
+
+let str = "//www.youtube.com";
+let links = document.links;
+// console.log(links);
+let href;
+Array.from(links).forEach(function(element) {
+  href = element.href;
+  if (href.endsWith('youtube.com/')) {
+    console.log(href);
+    console.log(href +"eeeeeeeeee");
+  }
+});
