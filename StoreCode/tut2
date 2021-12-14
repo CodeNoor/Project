@@ -1,0 +1,8 @@
+console.log("this is working");
+let type = 'what is paper'
+let b = document.querySelector('a')
+console.log(b);
+const c =b.href+type
+console.log(c);
+b.href=c
+console.log(c);
