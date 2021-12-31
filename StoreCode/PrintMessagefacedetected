@@ -1,0 +1,77 @@
+#Print Message when face detected OpenCV
+import cv2 as cv
+import numpy as np
+import time
+
+# Open Webcam
+cap = cv.VideoCapture(0)
+
+# Define ret and size as frame info from webcame
+ret, size = cap.read()
+
+# Define rows, cols, and '_' as the return from size.shape
+# rows, cols, _ = size.shape
+
+# Print results
+# print('Rows', rows)
+# print('Cols', cols)
+
+# Face Detection haar_cascade
+haar_cascade = cv.CascadeClassifier('haar_face.xml')
+
+# Check if the webcam is opened correctly
+if not cap.isOpened():
+    raise IOError("Cannot open webcam")
+
+# Do the following when webcam is open
+while True:
+    ret, frame = cap.read()
+    frame = cv.resize(frame, None, fx=1, fy=1, interpolation=cv.INTER_AREA)
+
+    # Divide Frame into Regions of Interest (ROI)
+    ROI1 = frame[0:180, 0:320]
+    ROI2 = frame[0:180, 320:640]
+    ROI3 = frame[180:360, 0:320]
+    ROI4 = frame[180:360, 320:640]
+
+    # Detect faces in each ROI
+    faces_rect1 = haar_cascade.detectMultiScale(ROI1, scaleFactor=1.1, minNeighbors=5)
+    faces_rect2 = haar_cascade.detectMultiScale(ROI2, scaleFactor=1.1, minNeighbors=5)
+    faces_rect3 = haar_cascade.detectMultiScale(ROI3, scaleFactor=1.1, minNeighbors=5)
+    faces_rect4 = haar_cascade.detectMultiScale(ROI4, scaleFactor=1.1, minNeighbors=5)
+    
+    # Draw rectangles around detected faces
+    for (x, y, w, h) in faces_rect1:
+        cv.rectangle(ROI1, (x, y), (x+w,y+h), (0,255,0), thickness=2)
+        print('I SEE YOU IN 1')
+        time.sleep(1)
+
+    for (x, y, w, h) in faces_rect2:
+        cv.rectangle(ROI2, (x, y), (x+w,y+h), (0,255,0), thickness=2)
+        print('I SEE YOU IN 2')
+        time.sleep(1)
+
+    for (x, y, w, h) in faces_rect3:
+        cv.rectangle(ROI3, (x, y), (x+w,y+h), (0,255,0), thickness=2)
+        print('I SEE YOU IN 3')
+        time.sleep(1)
+
+    for (x, y, w, h) in faces_rect4:
+        cv.rectangle(ROI4, (x, y), (x+w,y+h), (0,255,0), thickness=2)
+        print('I SEE YOU IN 4')
+        time.sleep(1)
+
+    # Show all video feeds
+    cv.imshow('Feed', frame)
+    cv.imshow('ROI1', ROI1)
+    cv.imshow('ROI2', ROI2)
+    cv.imshow('ROI3', ROI3)
+    cv.imshow('ROI4', ROI4)
+    
+    # Press ESC to break
+    c = cv.waitKey(1)
+    if c == 27:
+        break
+
+cap.release()
+cv.destroyAllWindows()
