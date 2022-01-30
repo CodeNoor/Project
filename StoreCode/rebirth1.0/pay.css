@@ -1,0 +1,152 @@
+a {
+    color: rgb(255, 255, 255);
+}
+
+a:link {
+    text-decoration: none;
+
+
+}
+
+
+
+.border {
+    border: 1px solid red;
+}
+
+
+.displayCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.page {
+    height: 100vh;
+}
+
+
+/* --------------------Top Raw Start----------------- */
+
+.topRaw {
+    position: relative;
+    top: 5vh;
+}
+
+
+h1 {
+    margin-top: 5vw;
+    font-size: 4.9vw;
+    margin-left: 3vw;
+    font-family: 'Sofia';
+}
+
+h2 {
+    margin: 0;
+    font-size: 6vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: 'Sofia'
+}
+
+#topHeading {
+    font-size: calc(1em + 30vmin);
+    font-weight: 900;
+    color: cornflowerblue;
+
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: lightblue;
+
+    text-shadow:
+
+        var(--x-offset) var(--y-offset) 0px var(--background-color),
+
+        calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke)) 0px var(--stroke-color);
+
+}
+
+
+/* ..Top Raw End..*/
+
+
+
+
+/* ---------------------Bottom Raw Start---------------------- */
+
+.bottomRaw {
+    position: relative;
+    top: 5vh;
+
+}
+
+
+h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #613A43;
+    font-size: 6vw;
+    font-family: 'Abel';
+    margin-bottom: 1vh !important;
+    margin: 0;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+
+}
+
+
+h4 {
+    margin: 0%;
+    font-size: 7vw;
+    color: rgb(3, 255, 45);
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+
+}
+
+h5 {
+    margin: 0;
+    font-size: 3vw;
+}
+
+b {
+    color: red;
+}
+
+#bottomHeading {
+    padding: 2vw;
+    border-radius: 2vw;
+    border: 1px dotted red;
+    margin: 1vw;
+
+}
+
+
+#btn1 {
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 20%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgb(228, 59, 44);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 4vw;
+    padding: 2vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 1vw;
+}
+
+/* ..Bottom Raw End..*/
+
+/* ------------------Foot--------------- */
+.foot {
+    margin-top: 30vw;
+
+}
+
+ul li {
+    font-family: 'Allan';
+    font-size: 4vw;
+}
